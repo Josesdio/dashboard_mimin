@@ -18,7 +18,7 @@ const Transactions = () => {
                         <td>
                             <div className={styles.user}>
                                 <Image src="/noavatar.png" alt="" width={40} height={40} className={styles.userImage} />
-                                John Doe
+                                Josesdio
                             </div>
                         </td>
                         <td>
@@ -31,7 +31,7 @@ const Transactions = () => {
                         <td>
                             <div className={styles.user}>
                                 <Image src="/noavatar.png" alt="" width={40} height={40} className={styles.userImage} />
-                                John Doe
+                                Josesdio
                             </div>
                         </td>
                         <td>
@@ -44,7 +44,7 @@ const Transactions = () => {
                         <td>
                             <div className={styles.user}>
                                 <Image src="/noavatar.png" alt="" width={40} height={40} className={styles.userImage} />
-                                John Doe
+                                Josesdio
                             </div>
                         </td>
                         <td>
@@ -57,7 +57,7 @@ const Transactions = () => {
                         <td>
                             <div className={styles.user}>
                                 <Image src="/noavatar.png" alt="" width={40} height={40} className={styles.userImage} />
-                                John Doe
+                                Josesdio
                             </div>
                         </td>
                         <td>

@@ -1,39 +1,49 @@
-import styles from '@/app/ui/dashboard/products/singleProduct/singleProduct.module.css'
-import Image from 'next/image'
+import { updateUser } from "@/app/lib/actions";
+import { fetchUser } from "@/app/lib/data";
+import styles from "@/app/ui/dashboard/users/singleUser/singleUser.module.css";
+import Image from "next/image";
 
-const SingleProductPage = () => {
-    return(
-        <div className={styles.container}>
-            <div className={styles.infoContainer}>
-                <div className={styles.imgContainer}>
-                    <Image src="/noavatar.png" alt="" fill />
-                </div>
-                Iphone
-            </div>
-            <div className={styles.formContainer}>
-                <form action="" className={styles.form}>
-                    <label>Title</label>
-                    <input type="text" name="title" placeholder='John Doe' />
-                    <label>Price</label>
-                    <input type="number" name="price" placeholder='JohnDoe@gmail.com' />
-                    <label>Stock</label>
-                    <input type="number" name="stock" placeholder='23' />
-                    <label>Color</label>
-                    <input type="text" name="color" placeholder='red' />
-                    <label>Size</label>
-                    <textarea type="text" name="size" placeholder='New York' />
-                    <label>Cat</label>
-                    <select name="cat" id="cat">
-                        <option value="kitchen">Kitchen</option>
-                        <option value="Computers">Computers</option>
-                    </select>
-                    <label>Description</label>
-                    <textarea name="desc" id="desc" rows="10" placeholder='description'></textarea>
-                    <button>Update</button>
-                </form>
-            </div>
+const SingleProductPage = async ({ params }) => {
+
+const { id } = params;
+const user = await fetchUser(id);
+
+return (
+    <div className={styles.container}>
+    <div className={styles.infoContainer}>
+        <div className={styles.imgContainer}>
+        <Image src={user.img || "/noavatar.png"} alt="" fill />
         </div>
-    )
-}
+        {user.username}
+    </div>
+        <div className={styles.formContainer}>
+        <form action={updateUser} className={styles.form}>
+        <input type="hidden" name="id" value={user.id}/>
+        <label>Username</label>
+        <input type="text" name="username" placeholder={user.username} />
+        <label>Email</label>
+        <input type="email" name="email" placeholder={user.email} />
+        <label>Password</label>
+        <input type="password" name="password" />
+        <label>Phone</label>
+        <input type="text" name="phone" placeholder={user.phone} />
+        <label>Address</label>
+        <textarea type="text" name="address" placeholder={user.address} />
+        <label>Is Admin?</label>
+        <select name="isAdmin" id="isAdmin">
+            <option value={true} selected={user.isAdmin}>Yes</option>
+            <option value={false} selected={!user.isAdmin}>No</option>
+        </select>
+        <label>Is Active?</label>
+        <select name="isActive" id="isActive">
+            <option value={true} selected={user.isActive}>Yes</option>
+            <option value={false} selected={!user.isActive}>No</option>
+        </select>
+        <button>Update</button>
+        </form>
+    </div>
+    </div>
+);
+};
 
-export default SingleProductPage
+export default SingleProductPage;

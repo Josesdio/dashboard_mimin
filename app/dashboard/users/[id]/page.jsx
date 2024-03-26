@@ -8,14 +8,14 @@ const SingleUserPage = () => {
                 <div className={styles.imgContainer}>
                     <Image src="/noavatar.png" alt="" fill />
                 </div>
-                John Doe
+                Josesdio
             </div>
             <div className={styles.formContainer}>
                 <form action="" className={styles.form}>
                     <label>Username</label>
-                    <input type="text" name="username" placeholder='John Doe' />
+                    <input type="text" name="username" placeholder='Josesdio' />
                     <label>Email</label>
-                    <input type="email" name="email" placeholder='JohnDoe@gmail.com' />
+                    <input type="email" name="email" placeholder='Josesdio@gmail.com' />
                     <label>Password</label>
                     <input type="password" name="password"  />
                     <label>Phone</label>
