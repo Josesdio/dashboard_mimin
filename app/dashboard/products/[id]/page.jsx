@@ -1,4 +1,4 @@
-import { updateUser } from "@/app/lib/actions";
+import { updateProduct } from "@/app/lib/actions";
 import { fetchUser } from "@/app/lib/data";
 import styles from "@/app/ui/dashboard/users/singleUser/singleUser.module.css";
 import Image from "next/image";
@@ -17,7 +17,7 @@ return (
         {user.username}
     </div>
         <div className={styles.formContainer}>
-        <form action={updateUser} className={styles.form}>
+        <form action={updateProduct} className={styles.form}>
         <input type="hidden" name="id" value={user.id}/>
         <label>Username</label>
         <input type="text" name="username" placeholder={user.username} />
